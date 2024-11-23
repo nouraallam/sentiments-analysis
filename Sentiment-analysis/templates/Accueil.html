@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      color: #0a0a0b;
+      overflow: hidden;
+    }
+
+    .container {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: left;
+      width: 80%;
+    }
+
+    h1 {
+      font-family: "monospace";
+      color: lightblue;
+    }
+
+    input[type="search"] {
+      width: 400px;
+      height: 40px;
+      font-size: 20px; /* Augmentez la taille de police selon vos préférences */
+      border-top-left-radius: 15px; /* Ajustez la valeur pour changer la courbure */
+      border-top-right-radius: 15px; /* Ajustez la valeur pour changer la courbure */
+      border-bottom-left-radius:15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    input[type="submit"] {
+  width: 90px;
+  height: 40px;
+  font-size: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #2a5555;
+  overflow-anchor: none;
+  color: white; /* Définissez la couleur du texte sur blanc */
+}
+
+
+     button{
+      
+      border-top-left-radius: 15px; /* Ajustez la valeur pour changer la courbure */
+      border-top-right-radius: 15px; /* Ajustez la valeur pour changer la courbure */
+      border-bottom-left-radius:15px;
+      border-bottom-right-radius: 15px;
+      background: #2a5555;
+  overflow-anchor: none;
+  color: white; /* Définissez la couleur du texte sur blanc */
+     }
+     .bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+  </style>
+</head>
+<body>
+  <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        
+    <source src="{{ url_for('static', filename='assets/bg1.mp4') }}" type="video/mp4" />
+
+</video>
+  <div class="container">
+    <div class="cover">
+      <h1>A Journey Through Sentiments</h1>
+      <form class="flex-form" action="{{ url_for('predict_text') }}" method="post">
+        <label for="from">
+          <i class="ion-location"></i>
+        </label>
+        <div class="form-inline">
+          <input type="search" placeholder="what's up?" name="text">
+          <input type="submit" value="click"><br><br><br>
+          <button><a href="{{ url_for('audio') }}">Tester avec l'audio</a></button>
+        </div>
+      </form>
+      <h1>{{ sentiment }} </h1>
+    </div>
+  </div>
+</body>
+</html>
