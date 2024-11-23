@@ -1,0 +1,68 @@
+<!-- Déclaration du type de document HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Configuration des métadonnées de la page -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Titre de la page -->
+    <title>APP Sentiment</title>
+    <!-- Icône de favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <!-- Chargement des icônes Font Awesome (version gratuite) -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Chargement des polices Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Police Tinos pour le contenu principal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
+    <!-- Police DM Sans pour les titres -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
+    <!-- Liens vers les feuilles de style -->
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <!-- Vidéo de fond -->
+    <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="{{ url_for('static', filename='assets/bg1.mp4') }}" type="video/mp4" />
+    </video>
+    <!-- Masthead - section principale de la page -->
+    <div class="masthead">
+        <!-- Contenu de la section Masthead -->
+        <div class="masthead-content text-white">
+            <!-- Conteneur fluide Bootstrap -->
+            <div class="container-fluid px-4 px-lg-0">
+                <!-- Titre de la page -->
+                <h1 class="fst-italic lh-1 mb-4">Exploring Feelings</h1>
+                <!-- Description sous le titre -->
+                <p class="mb-5" style="font-family:  cursive;">An Analytical Approach Based on RNN Recurrent Neural Networks</p>
+
+                <!-- Formulaire (commenté car il nécessite une API token) -->
+                <!-- Formulaire de contact pré-intégré avec SB Forms -->
+                <!-- Pour le rendre fonctionnel, inscrivez-vous à l'adresse -->
+                <!-- https://startbootstrap.com/solution/contact-forms -->
+                <!-- pour obtenir un jeton API !-->
+                <!--<form id="contactForm" data-sb-form-api-token="API_TOKEN">-->
+                <!--    Votre formulaire ici -->
+                <!--    <a href="{{ url_for('accueil') }}">-->
+                <!--        <button class="btn btn-primary" type="button">try our application</button>-->
+                <!--    </a>-->
+                <!--</form>-->
+
+                <!-- Lien vers la page d'accueil -->
+                <a href="{{ url_for('accueil') }}">
+                    <!-- Bouton pour essayer l'application -->
+                    <button class="btn btn-primary" type="button">try our application</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- SB Forms JS -->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
